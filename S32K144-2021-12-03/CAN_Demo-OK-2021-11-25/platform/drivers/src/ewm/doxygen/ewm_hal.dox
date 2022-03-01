@@ -1,0 +1,8 @@
+/*!
+ * @defgroup ewm_hal EWM HAL
+ * @ingroup ewm
+ * @brief External Watchdog Monitor Hardware Abstraction Layer.
+ *
+ * This HAL provides low-level access to all hardware features of the EWM.
+ */
+

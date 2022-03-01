@@ -1,0 +1,17 @@
+.\objects\main.o: VCUAPP\main.c
+.\objects\main.o: C:\Keil_v5\ARM\PACK\Keil\S32_SDK_DFP\1.2.0\platform\devices\device_registers.h
+.\objects\main.o: C:\Keil_v5\ARM\PACK\Keil\S32_SDK_DFP\1.2.0\platform\devices\common/s32_core_cm4.h
+.\objects\main.o: C:\Keil_v5\ARM\PACK\Keil\S32_SDK_DFP\1.2.0\platform\devices\S32K144/include/S32K144.h
+.\objects\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\main.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include\core_cm4.h
+.\objects\main.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include\cmsis_version.h
+.\objects\main.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include\cmsis_compiler.h
+.\objects\main.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include\cmsis_armcc.h
+.\objects\main.o: .\RTE\Device\S32K144HFxxxLLx\system_S32K144.h
+.\objects\main.o: C:\Keil_v5\ARM\PACK\Keil\S32_SDK_DFP\1.2.0\platform\devices\S32K144/include/S32K144_features.h
+.\objects\main.o: C:\Keil_v5\ARM\PACK\Keil\S32_SDK_DFP\1.2.0\platform\devices\devassert.h
+.\objects\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+.\objects\main.o: .\driver\drvGPIO.h
+.\objects\main.o: .\driver\drvCAN.h
+.\objects\main.o: .\driver\drvflash.h
+.\objects\main.o: .\platform\devices\S32K144\include\S32K144.h

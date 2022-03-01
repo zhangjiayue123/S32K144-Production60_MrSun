@@ -1,0 +1,98 @@
+/**
+@defgroup eim Error Injection Module (EIM)
+@brief The S32 SDK provides both HAL and Peripheral Drivers for the Error Injection Module (EIM) of S32 MCU@n
+@details
+The Error Injection Module is mainly used for diagnostic purposes. It provides a method
+for diagnostic coverage of the peripheral memories.@n
+The Error Injection Module (EIM) provides support for inducing single-bit and multi-bit
+inversions on read data when accessing peripheral RAMs. Injecting faults on memory
+accesses can be used to exercise the SEC-DED ECC function of the related system.@n
+@n
+### Important Note: ###
+1. Make sure that STACK memory is located in RAM different than where EIM will inject a non-correctable error.@n
+2. For single bit error generation, flip only one bit out of DATA_MASK or CHKBIT_MASK bit-fields in EIM control registers.@n
+3. For Double bit error generation, Flip only two bits out of DATA_MASK or CHKBIT_MASK bit-fields in EIM control registers.@n
+4. If more than 2 bits are flipped that there is no guarantee in design that what type of error get generated.@n
+*/
+
+/*!
+@addtogroup eim_drv
+@ingroup eim
+
+# Basic Operations of EIM
+
+1. To initialize EIM, call EIM_DRV_Init() with an user channel configuration array.
+    In the following code, EIM is initialized with default settings (after reset) for
+    check-bit mask and data mask and both channels is enabled.@n
+~~~~~{.c}
+    #define INST_EIM1 (0U)
+
+    /* Configuration structure array */
+    eim_user_channel_config_t userChannelConfigArr[] =
+    {
+        /* Configuration channel 0 */
+        {
+            .channel = 0x0U,
+            .checkBitMask = 0x00U,
+            .dataMask = 0x00U,
+            .enable = true
+        },
+        /* Configuration channel 1 */
+        {
+            .channel = 0x1U,
+            .checkBitMask = 0x00U,
+            .dataMask = 0x00U,
+            .enable = true
+        }
+    };
+
+    /* Initialize the EIM instance 0 with configured channel number of 2 and userChannelConfigArr */
+    EIM_DRV_Init(INST_EIM1, 2U, userChannelConfigArr);
+~~~~~
+
+2. Check-bit mask defines a bit-mapped mask that specifies whether the corresponding bit
+    of the check-bit bus from the target RAM should be inverted or remain unmodified.
+    Data mask defines a bit-mapped mask that specifies whether the corresponding bit
+    of the read data bus from the target RAM should be inverted or remain unmodified.
+    To reconfigure check-bit mask or data mask:
+     1. The first make sure that EIM module is disabled by call EIM_HAL_Disable().
+     2. After that, call EIM_DRV_ConfigChannel() with a new check-bit mask or data mask wants to change.
+     3. And finally, call EIM_HAL_Enable() to re-enable EIM module.
+    The following sample code reconfigures EIM to invert bit 0, 2, 5, 7 of check-bit bus
+    for channel 0 and invert bit 7, 15, 23, 31 of bytes 0-3 of the read data bus for channel 1.@n
+~~~~~{.c}
+    /* Disable EIM module */
+    EIM_HAL_Disable(g_eimBase[INST_EIM1]);
+
+    /* Change user configuration of EIM channel 0 */
+    userChannelConfigArr[0].checkBitMask = 0b10100101U;
+    /* Set new user configuration for channel 0*/
+    EIM_DRV_ConfigChannel(INST_EIM1, userChannelConfigArr[0]);
+
+    /* Change user configuration of EIM channel 1 */
+    userChannelConfigArr[1].dataMask = 0x80808080U;
+    /* Set new user configuration for channel 1*/
+    EIM_DRV_ConfigChannel(INST_EIM1, userChannelConfigArr[1]);
+
+    /* Enable EIM module */
+    EIM_HAL_Enable(g_eimBase[INST_EIM1]);
+~~~~~
+
+3. To get the current register configuration (data mask, check-bit mask and enable status)
+    of a channel in EIM, just call EIM_DRV_GetChannelConfig(). Make sure that the operation
+    is not execute in target RAM where EIM inject the error@n
+~~~~~{.c}
+    eim_user_channel_config_t channelConfig;
+
+    /* Get configuration of EIM channel 1*/
+    EIM_DRV_GetChannelConfig(INST_EIM1, 1U, &channelConfig);
+~~~~~
+
+4. To de-initialize EIM, just call the EIM_DRV_Deinit() function.
+    This function sets all registers to reset values and disables EIM.@n
+~~~~~{.c}
+    /* De-initializes the EIM module */
+    EIM_DRV_Deinit(INST_EIM1);
+~~~~~
+
+*/

@@ -1,0 +1,9 @@
+.\objects\vcu.o: VCUAPP\VCU.c
+.\objects\vcu.o: VCUAPP\VCU.h
+.\objects\vcu.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\vcu.o: VCUAPP\database.h
+.\objects\vcu.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\objects\vcu.o: .\driver\drvTimer.h
+.\objects\vcu.o: VCUAPP\pdu.h
+.\objects\vcu.o: VCUAPP\database.h
+.\objects\vcu.o: .\driver\drvCAN.h

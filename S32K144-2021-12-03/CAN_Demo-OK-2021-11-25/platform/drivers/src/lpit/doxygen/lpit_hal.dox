@@ -1,0 +1,7 @@
+/*!
+ * @defgroup lpit_hal LPIT HAL
+ * @ingroup lpit
+ * @brief Low Power Interrupt Timer module Hardware Abstraction Layer.
+ *
+ * This HAL provides low-level access to all hardware features of the LPIT.
+ */

@@ -1,0 +1,12 @@
+.\objects\drvpower.o: driver\drvPower.c
+.\objects\drvpower.o: driver\drvpower.h
+.\objects\drvpower.o: .\platform\devices\S32K144\include\s32k144.h
+.\objects\drvpower.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\drvpower.o: d:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include\core_cm4.h
+.\objects\drvpower.o: d:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include\cmsis_version.h
+.\objects\drvpower.o: d:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include\cmsis_compiler.h
+.\objects\drvpower.o: d:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include\cmsis_armcc.h
+.\objects\drvpower.o: .\RTE\Device\S32K144HFxxxLLx\system_S32K144.h
+.\objects\drvpower.o: .\platform\devices\S32K144\include\S32K144.h
+.\objects\drvpower.o: driver\drvGPIO.h
+.\objects\drvpower.o: driver\drvTimer.h

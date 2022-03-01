@@ -1,0 +1,10 @@
+.\objects\drvftm.o: driver\drvFTM.c
+.\objects\drvftm.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\drvftm.o: .\platform\devices\S32K144\include\S32K144.h
+.\objects\drvftm.o: d:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include\core_cm4.h
+.\objects\drvftm.o: d:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include\cmsis_version.h
+.\objects\drvftm.o: d:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include\cmsis_compiler.h
+.\objects\drvftm.o: d:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include\cmsis_armcc.h
+.\objects\drvftm.o: .\RTE\Device\S32K144HFxxxLLx\system_S32K144.h
+.\objects\drvftm.o: driver\drvFTM.h
+.\objects\drvftm.o: driver\drvGPIO.h

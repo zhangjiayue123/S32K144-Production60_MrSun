@@ -1,0 +1,9 @@
+.\objects\drvwatchdog.o: driver\drvWatchDog.c
+.\objects\drvwatchdog.o: driver\drvWatchDog.h
+.\objects\drvwatchdog.o: .\platform\devices\S32K144\include\s32K144.h
+.\objects\drvwatchdog.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\drvwatchdog.o: d:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include\core_cm4.h
+.\objects\drvwatchdog.o: d:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include\cmsis_version.h
+.\objects\drvwatchdog.o: d:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include\cmsis_compiler.h
+.\objects\drvwatchdog.o: d:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include\cmsis_armcc.h
+.\objects\drvwatchdog.o: .\RTE\Device\S32K144HFxxxLLx\system_S32K144.h
